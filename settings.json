@@ -30,6 +30,7 @@
 
   */
 
+  // Change this part for database you connected
    "dbType" : "mysql",
    "dbSettings" : {
                     "user"    : "DB_USER",
@@ -110,7 +111,7 @@
       "is_admin": true
     },
     "user": {
-      "password": "changeme1",
+      "password": "changeme2",
       "is_admin": false
     }
   },

@@ -7,5 +7,6 @@ if [ -f /etherpad/settings.json ]; then
   cp /etherpad/settings.json /var/lib/etherpad/
 fi
 
+#Launch server use server.js to skip updating dependence.
 #/var/lib/etherpad/bin/run.sh $@
 node /var/lib/etherpad/src/node/server.js

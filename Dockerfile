@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:6.2.0-wheezy
 MAINTAINER zhouxin@day-one.cn
 
 #update eveything
@@ -12,14 +12,12 @@ RUN mkdir /var/lib/etherpad
 WORKDIR /var/lib/etherpad
 RUN curl -L https://github.com/ether/etherpad-lite/tarball/master | tar -xz --strip-components=1
 
-# Add settings.json
-COPY settings.json ./
-
 # Add startup script
 COPY entrypoint.sh /
 RUN chmod a+x /entrypoint.sh
 
 RUN ./bin/installDeps.sh
+RUN npm i graceful-fs@latest
 
 # A few workarounds so we can run as non-root on openshift
 RUN mkdir /.npm
